@@ -34,7 +34,7 @@ jobs:
       
     # Build Project
     - name: yarn build
-      run: yarn build ./Assignment_3
+      run: cd ./Assignment_3 && yarn build
       
     # Install surge
     - name: Install Surge
