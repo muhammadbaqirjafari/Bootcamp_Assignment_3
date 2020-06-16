@@ -25,18 +25,7 @@ jobs:
       uses: actions/setup-node@v2-beta
       with:
         version: 12
-    
-    # Install Yarn
-    - name: Install yarn
-      uses: borales/actions-yarn@v2.0.0
-      with:
-        cmd: install
-      
-    # Build Project
-    - name: cd ./Assignment_3
-      run: cd ./Assignment_3
-    - run: yarn build
-      
+        
     # Install surge
     - name: Install Surge
       run: npm install -g surge
