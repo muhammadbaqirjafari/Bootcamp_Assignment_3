@@ -33,8 +33,9 @@ jobs:
         cmd: install
       
     # Build Project
-    - name: yarn build
-      run: cd ./Assignment_3 && yarn build
+    - name: cd ./Assignment_3
+      run: cd ./Assignment_3
+    - run: yarn build
       
     # Install surge
     - name: Install Surge
@@ -42,4 +43,4 @@ jobs:
     
     # Deploy to Surge
     - name: Deploy to surge 
-      run: surge ./Assignment_3/src muhammad_baqir_assignment_3.surge.sh --token ${{secrets.SURGE_TOKEN}}
+      run: surge ./src muhammad_baqir_assignment_3.surge.sh --token ${{secrets.SURGE_TOKEN}}
