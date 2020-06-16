@@ -1,0 +1,45 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Automatic Deployment to Surge
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches: [ master ]
+    
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v2
+
+    # Install NodeJS
+    - name: Install NodeJS
+      uses: actions/setup-node@v2-beta
+      with:
+        version: 12
+    
+    # Install Yarn
+    - name: Install yarn
+      uses: borales/actions-yarn@v2.0.0
+      with:
+        cmd: install
+      
+    # Build Project
+    - name: yarn build
+      run: yarn build ./Assignment_3
+      
+    # Install surge
+    - name: Install Surge
+      run: npm install -g surge
+    
+    # Deploy to Surge
+    - name: Deploy to surge 
+      run: surge ./Assignment_3/src muhammad_baqir_assignment_3.surge.sh --token ${{secrets.SURGE_TOKEN}}
