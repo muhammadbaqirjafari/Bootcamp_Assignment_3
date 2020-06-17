@@ -27,14 +27,9 @@ jobs:
         version: 12
 
     # Install Yarn
-    - name: Install Yarn
-      uses: borales/actions-yarn@v2.0.0
-      with:
-        cmd: install
-    
     - name: Build Project
-      working-directory: ./Assignment_3 
-      run: yarn build
+      working-directory: ./Assignment_3
+      run: npm run-script build
     
     # Install surge
     - name: Install Surge
