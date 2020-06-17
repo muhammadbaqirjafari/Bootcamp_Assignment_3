@@ -34,7 +34,7 @@ jobs:
       run: sudo apt update && sudo apt install yarn
     
     # Build Yarn
-    - run: yarn build --cwd ./Assignment_3
+    - run: yarn --cwd ./Assignment_3 build
     
     # Install surge
     - name: Install Surge
