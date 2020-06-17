@@ -36,9 +36,7 @@ jobs:
     # Build Yarn
     - run: yarn --cwd Assignment_3 
     
-    - run: ls
-    
-    - run: ls ../
+    - run: ls ./Assignment_3
     
     # Install surge
     - name: Install Surge
