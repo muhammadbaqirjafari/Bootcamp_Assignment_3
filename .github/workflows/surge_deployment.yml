@@ -27,18 +27,12 @@ jobs:
         version: 12
 
     # Install Yarn
-    - name: Install Files
-      run: curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-           echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
     - name: Install Yarn
-      run: sudo apt update && sudo apt install yarn
+      uses: borales/actions-yarn@v2.0.0
+      with:
+        cmd: install
     
-    # Build Yarn
-    - name: Yarn build
-      working-directory: ./Assignment_3  
-      run: ls
-      
-    - name: Ok
+    - name: Build Project
       working-directory: ./Assignment_3 
       run: yarn build
     
