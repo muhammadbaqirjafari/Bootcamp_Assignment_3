@@ -6,7 +6,7 @@ name: Automatic Deployment to Surge
 # events but only for the master branch
 on:
   push:
-    branches: [ master ]
+    branches: [ master, current ]
     
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -34,7 +34,7 @@ jobs:
       run: sudo apt update && sudo apt install yarn
     
     # Build Yarn
-    - run: yarn --cwd ./Assignment_3 build  
+    - run: yarn build --cwd ./Assignment_3
     
     # Install surge
     - name: Install Surge
