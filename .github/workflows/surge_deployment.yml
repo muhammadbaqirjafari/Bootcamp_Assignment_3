@@ -34,7 +34,7 @@ jobs:
       run: sudo apt update && sudo apt install yarn
     
     
-    - run: yarn version
+    - run: yarn --version
     
     # Build Yarn
     - name: Yarn build
