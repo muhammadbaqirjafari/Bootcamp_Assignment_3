@@ -26,11 +26,11 @@ jobs:
       with:
         version: 12
 
-    # Install Yarn
+    # Build Project
     - name: Build Project
       working-directory: ./Assignment_3
       run: npm run-script build
-    
+         
     # Install surge
     - name: Install Surge
       run: npm install -g surge
