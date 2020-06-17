@@ -36,6 +36,10 @@ jobs:
     # Build Yarn
     - run: yarn --cwd Assignment_3 
     
+    - run: ls
+    
+    - run: ls ../
+    
     # Install surge
     - name: Install Surge
       run: npm install -g surge
