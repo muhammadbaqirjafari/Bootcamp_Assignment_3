@@ -34,7 +34,7 @@ jobs:
       run: curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
            echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
     - name: Install Yarn
-      run: sudo apt update && sudo apt install yar
+      run: sudo apt update && sudo apt install yarn
     
     # Build Yarn
     - run: yarn build  
