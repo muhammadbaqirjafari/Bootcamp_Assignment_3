@@ -25,11 +25,23 @@ jobs:
       uses: actions/setup-node@v2-beta
       with:
         version: 12
-        
+      
+    # Install Yarn
+    - name: Install Yarn
+      uses: borales/actions-yarn@v2.0.0
+      with:
+        cmd: install
+    
+    # Change directory
+    - run: cd ./Assignment_3
+    
+    # Build Yarn
+    - run: yarn build  
+    
     # Install surge
     - name: Install Surge
       run: npm install -g surge
     
     # Deploy to Surge
     - name: Deploy to surge 
-      run: surge ./Assignment_3/src muhammad_baqir_assignment_3.surge.sh --token ${{secrets.SURGE_TOKEN}}
+      run: surge ./build muhammad_baqir_assignment_3.surge.sh --token ${{secrets.SURGE_TOKEN}}
