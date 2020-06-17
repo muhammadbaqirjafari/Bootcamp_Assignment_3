@@ -25,16 +25,16 @@ jobs:
       uses: actions/setup-node@v2-beta
       with:
         version: 12
-      
+    
+    # Change directory
+    - run: cd ./Assignment_3
+
     # Install Yarn
     - name: Install Yarn
       uses: borales/actions-yarn@v2.0.0
       with:
         cmd: install
-    
-    # Change directory
-    - run: cd ./Assignment_3
-    
+
     # Build Yarn
     - run: yarn build  
     
