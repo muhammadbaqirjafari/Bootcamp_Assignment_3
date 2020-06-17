@@ -26,18 +26,11 @@ jobs:
       with:
         version: 12
 
-    # Install Yarn
-    - name: Install Files
-      run: curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-           echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-    - name: Install Yarn
-      run: sudo apt update && sudo apt install yarn
-    
-    # Build Yarn
-    - run: yarn --cwd Assignment_3 
-    
-    - run: ls ./Assignment_3
-    
+    # Build Project
+    - name: Build Project
+      working-directory: ./Assignment_3
+      run: npm run-script build
+         
     # Install surge
     - name: Install Surge
       run: npm install -g surge
