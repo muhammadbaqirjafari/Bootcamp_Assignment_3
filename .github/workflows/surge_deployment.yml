@@ -42,4 +42,4 @@ jobs:
     
     # Deploy to Surge
     - name: Deploy to surge 
-      run: surge ./Assignment_3/build muhammad_baqir_assignment_3.surge.sh --token ${{secrets.SURGE_TOKEN}}
+      run: surge ./build muhammad_baqir_assignment_3.surge.sh --token ${{secrets.SURGE_TOKEN}}
