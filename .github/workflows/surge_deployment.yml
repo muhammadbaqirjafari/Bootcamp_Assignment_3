@@ -14,7 +14,7 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
+    
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -25,9 +25,6 @@ jobs:
       uses: actions/setup-node@v2-beta
       with:
         version: 12
-    
-    # Change directory
-    - run: cd ./Assignment_3
 
     # Install Yarn
     - name: Install Files
@@ -37,7 +34,7 @@ jobs:
       run: sudo apt update && sudo apt install yarn
     
     # Build Yarn
-    - run: yarn build  
+    - run: yarn --cwd ./Assignment_3 build  
     
     # Install surge
     - name: Install Surge
@@ -45,4 +42,4 @@ jobs:
     
     # Deploy to Surge
     - name: Deploy to surge 
-      run: surge ./build muhammad_baqir_assignment_3.surge.sh --token ${{secrets.SURGE_TOKEN}}
+      run: surge ./Assignment_3/build muhammad_baqir_assignment_3.surge.sh --token ${{secrets.SURGE_TOKEN}}
